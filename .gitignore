@@ -4,3 +4,6 @@
 # Only store exported PNG assets
 *.kra
 *.kra~
+*.svg
+*.svg.import
+*.png~
