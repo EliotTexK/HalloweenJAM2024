@@ -12,7 +12,7 @@ public enum SkeletonPathNode {
 }
 
 public static partial class StaticGameInfo {
-	public const int TILE_LENGTH = 1500;
+	public const int TILE_LENGTH = 750;
 	public static WeakRef[,] Grid {get; set;}
 	public static WeakRef Patrickson;
 	// TODO: If we have time, consider sorting skeletons by distance to milk tanks,

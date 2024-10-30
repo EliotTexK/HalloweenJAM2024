@@ -7,8 +7,11 @@ public partial class MilkTank : GridObject
 {
 	public MilkTank() {
         Health = 20;
-        SetGridSpaceFromScreenSpace();
     }
+    public override void _Ready() {
+        SetGridSpaceFromScreenSpace();
+        // TODO: make sure nothing is in the same tile as this
+	}
 }
 
 }
