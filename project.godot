@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Halloween Game Jam"
-run/main_scene="res://main.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://Scenes/main.tscn"
+config/features=PackedStringArray("4.3", "Compatibility")
 config/icon="res://icon.svg"
 
 [display]
