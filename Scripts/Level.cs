@@ -10,8 +10,11 @@ public partial class Level : Node2D {
     public int Width {get; set;} = 15;
     [Export]
     public int Height {get; set;} = 10;
-    public override void _Ready() {
+    public Level() {
         StaticGameInfo.Init(Width, Height);
+    }
+    public override void _Ready() {
+        StaticGameInfo.ComputeSkeletonPath();
     }
 }
 

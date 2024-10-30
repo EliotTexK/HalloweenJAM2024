@@ -1,81 +1,488 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwrlel8it5yvm"]
+[gd_scene load_steps=8 format=3 uid="uid://dwrlel8it5yvm"]
 
 [ext_resource type="Script" path="res://Scripts/Level.cs" id="1_1062l"]
 [ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_77i4u"]
 [ext_resource type="Texture2D" uid="uid://b33415f2dprj5" path="res://Assets/HayBale.png" id="3_3vevd"]
+[ext_resource type="Script" path="res://Scripts/MilkTank.cs" id="4_62rtb"]
 [ext_resource type="Script" path="res://Scripts/HayBale.cs" id="4_70cbn"]
+[ext_resource type="Texture2D" uid="uid://c5kq44k701nso" path="res://Assets/MilkTank.png" id="5_4q427"]
+[ext_resource type="Texture2D" uid="uid://gyhppw7y710y" path="res://Assets/Fence.png" id="6_tpvy4"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_1062l")
 
 [node name="GrassTex" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(150, 1000)
+position = Vector2(4500, 4500)
+scale = Vector2(2, 2)
 texture = ExtResource("2_77i4u")
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 10000)
-
-[node name="HayBale" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale2" type="Sprite2D" parent="."]
-position = Vector2(-750, 750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale4" type="Sprite2D" parent="."]
-position = Vector2(750, -750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale5" type="Sprite2D" parent="."]
-position = Vector2(1500, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale6" type="Sprite2D" parent="."]
-position = Vector2(1500, 750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale7" type="Sprite2D" parent="."]
-position = Vector2(750, 750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale8" type="Sprite2D" parent="."]
-position = Vector2(750, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale9" type="Sprite2D" parent="."]
-position = Vector2(0, 750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
-
-[node name="HayBale3" type="Sprite2D" parent="."]
-position = Vector2(0, -750)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3vevd")
-offset = Vector2(750, 750)
-script = ExtResource("4_70cbn")
+region_rect = Rect2(0, 0, 20000, 20000)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5250, 3000)
 zoom = Vector2(0.1, 0.1)
+
+[node name="MilkTank" type="Sprite2D" parent="."]
+position = Vector2(9750, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_4q427")
+offset = Vector2(750, 750)
+script = ExtResource("4_62rtb")
+
+[node name="Bales" type="Node" parent="."]
+
+[node name="HayBale" type="Sprite2D" parent="Bales"]
+position = Vector2(6000, 3000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale10" type="Sprite2D" parent="Bales"]
+position = Vector2(9750, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale11" type="Sprite2D" parent="Bales"]
+position = Vector2(7500, 4500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale12" type="Sprite2D" parent="Bales"]
+position = Vector2(8250, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale13" type="Sprite2D" parent="Bales"]
+position = Vector2(9000, 3000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale14" type="Sprite2D" parent="Bales"]
+position = Vector2(10500, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale15" type="Sprite2D" parent="Bales"]
+position = Vector2(9000, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale2" type="Sprite2D" parent="Bales"]
+position = Vector2(10500, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale4" type="Sprite2D" parent="Bales"]
+position = Vector2(8250, 3750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale5" type="Sprite2D" parent="Bales"]
+position = Vector2(6000, 4500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale6" type="Sprite2D" parent="Bales"]
+position = Vector2(9750, 3000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale7" type="Sprite2D" parent="Bales"]
+position = Vector2(7500, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale8" type="Sprite2D" parent="Bales"]
+position = Vector2(6000, 3750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale9" type="Sprite2D" parent="Bales"]
+position = Vector2(6750, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale3" type="Sprite2D" parent="Bales"]
+position = Vector2(7500, 3750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="BorderFence" type="Node" parent="."]
+
+[node name="Fence" type="Sprite2D" parent="BorderFence"]
+position = Vector2(0, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence29" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence14" type="Sprite2D" parent="BorderFence"]
+position = Vector2(750, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence15" type="Sprite2D" parent="BorderFence"]
+position = Vector2(1500, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence16" type="Sprite2D" parent="BorderFence"]
+position = Vector2(2250, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence17" type="Sprite2D" parent="BorderFence"]
+position = Vector2(3000, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence18" type="Sprite2D" parent="BorderFence"]
+position = Vector2(3750, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence19" type="Sprite2D" parent="BorderFence"]
+position = Vector2(4500, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence20" type="Sprite2D" parent="BorderFence"]
+position = Vector2(5250, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence21" type="Sprite2D" parent="BorderFence"]
+position = Vector2(6000, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence22" type="Sprite2D" parent="BorderFence"]
+position = Vector2(6750, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence23" type="Sprite2D" parent="BorderFence"]
+position = Vector2(7500, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence24" type="Sprite2D" parent="BorderFence"]
+position = Vector2(8250, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence25" type="Sprite2D" parent="BorderFence"]
+position = Vector2(9000, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence26" type="Sprite2D" parent="BorderFence"]
+position = Vector2(9750, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence27" type="Sprite2D" parent="BorderFence"]
+position = Vector2(10500, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence28" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, -750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence31" type="Sprite2D" parent="BorderFence"]
+position = Vector2(750, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence32" type="Sprite2D" parent="BorderFence"]
+position = Vector2(0, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence33" type="Sprite2D" parent="BorderFence"]
+position = Vector2(1500, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence34" type="Sprite2D" parent="BorderFence"]
+position = Vector2(2250, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence35" type="Sprite2D" parent="BorderFence"]
+position = Vector2(3000, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence36" type="Sprite2D" parent="BorderFence"]
+position = Vector2(3750, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence37" type="Sprite2D" parent="BorderFence"]
+position = Vector2(4500, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence38" type="Sprite2D" parent="BorderFence"]
+position = Vector2(5250, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence39" type="Sprite2D" parent="BorderFence"]
+position = Vector2(6000, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence40" type="Sprite2D" parent="BorderFence"]
+position = Vector2(6750, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence41" type="Sprite2D" parent="BorderFence"]
+position = Vector2(7500, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence42" type="Sprite2D" parent="BorderFence"]
+position = Vector2(8250, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence43" type="Sprite2D" parent="BorderFence"]
+position = Vector2(9000, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence44" type="Sprite2D" parent="BorderFence"]
+position = Vector2(9750, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence45" type="Sprite2D" parent="BorderFence"]
+position = Vector2(10500, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence46" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence3" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence4" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence5" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence6" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence7" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence8" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence9" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 3000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence10" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 3750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence11" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 4500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence12" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 5250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence13" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 6000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence47" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence48" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence49" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence50" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 1500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence51" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence52" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 2250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence53" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 3000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence54" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 3750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence55" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 4500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence56" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 5250)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence57" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 6000)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence58" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 6750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence59" type="Sprite2D" parent="BorderFence"]
+position = Vector2(11250, 6750)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)
+
+[node name="Fence30" type="Sprite2D" parent="BorderFence"]
+position = Vector2(-750, 7500)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tpvy4")
+offset = Vector2(750, 750)

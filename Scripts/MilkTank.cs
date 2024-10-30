@@ -5,13 +5,11 @@ namespace COMEONANDSLAM {
 
 public partial class MilkTank : GridObject
 {
-	public MilkTank() {
+	public override void _Ready() {
+        base._Ready();
         Health = 20;
+        StaticGameInfo.MilkLocation = GridPos;
     }
-    public override void _Ready() {
-        SetGridSpaceFromScreenSpace();
-        // TODO: make sure nothing is in the same tile as this
-	}
 }
 
 }

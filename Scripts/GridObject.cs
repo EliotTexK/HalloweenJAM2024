@@ -7,6 +7,11 @@ public partial class GridObject : Node2D
 {
 	public Vector2I GridPos;
 	public int Health;
+	public override void _Ready(){
+		base._Ready();
+		SetGridSpaceFromScreenSpace();
+		StaticGameInfo.Grid[GridPos.X, GridPos.Y] = WeakRef(this);
+	}
 	public override void _Process(double delta) {
 		float moveSpeed = 50f;  // Controls the speed of motion
 		float easing = 0.05f;    // Controls the curve's shape (smaller values make it start slower)

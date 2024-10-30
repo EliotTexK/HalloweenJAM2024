@@ -32,10 +32,14 @@ public static partial class StaticGameInfo {
 				SkeletonPath[x,y] = SkeletonPathNode.Unexplored;
 			}
 		}
-		ComputeSkeletonPath();
 	}
 	public static GridObject QueryMap(Vector2I pos) {
-		return (GridObject)Grid[pos.X, pos.Y].GetRef().AsGodotObject();
+		var wr = Grid[pos.X,pos.Y];
+		if (wr == null) return null;
+		var gr = wr.GetRef();
+		var ago = gr.AsGodotObject();
+		var go = (GridObject)gr;
+		return go;
 	}
 	public static bool IsInGridBounds(Vector2I pos) {
 		return pos.X >= 0 && pos.Y >= 0 && pos.X < Grid.GetLength(0) && pos.Y < Grid.GetLength(1);
@@ -58,7 +62,8 @@ public static partial class StaticGameInfo {
 			foreach (var neighbor in neighbors) {
 				int nbrX = neighbor.Key.X; int nbrY = neighbor.Key.Y;
 				if (IsInGridBounds(neighbor.Key) && SkeletonPath[nbrX,nbrY] == SkeletonPathNode.Unexplored) {
-					if (QueryMap(neighbor.Key) is HayBale) {
+					var qm = QueryMap(neighbor.Key);
+					if (qm is HayBale) {
 						SkeletonPath[neighbor.Key.X,neighbor.Key.Y] = SkeletonPathNode.Wall;
 					} else {
 						frontier.Enqueue(neighbor.Key);
