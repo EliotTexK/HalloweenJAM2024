@@ -1,5 +1,45 @@
-[gd_scene format=3 uid="uid://dwrlel8it5yvm"]
+[gd_scene load_steps=5 format=3 uid="uid://dwrlel8it5yvm"]
+
+[ext_resource type="Script" path="res://Scripts/Level.cs" id="1_1062l"]
+[ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_77i4u"]
+[ext_resource type="Texture2D" uid="uid://b33415f2dprj5" path="res://Assets/HayBale.png" id="3_3vevd"]
+[ext_resource type="Script" path="res://Scripts/HayBale.cs" id="4_70cbn"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_1062l")
 
-[node name="Node" type="Node" parent="."]
+[node name="GrassTex" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(150, 1000)
+texture = ExtResource("2_77i4u")
+region_enabled = true
+region_rect = Rect2(0, 0, 10000, 10000)
+
+[node name="HayBale" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale2" type="Sprite2D" parent="."]
+position = Vector2(10, -747)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale3" type="Sprite2D" parent="."]
+position = Vector2(-753, -759)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="HayBale4" type="Sprite2D" parent="."]
+position = Vector2(-758, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vevd")
+offset = Vector2(750, 750)
+script = ExtResource("4_70cbn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
