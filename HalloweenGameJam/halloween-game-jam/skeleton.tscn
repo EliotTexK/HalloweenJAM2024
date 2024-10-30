@@ -1,0 +1,69 @@
+[gd_scene load_steps=14 format=3 uid="uid://fo86f2st4qoe"]
+
+[ext_resource type="Script" path="res://skeleton.gd" id="1_mpe1p"]
+[ext_resource type="Texture2D" uid="uid://bp6wlguqtlo05" path="res://Assets/Mob/LowerArm1.png" id="2_yxwy1"]
+[ext_resource type="Texture2D" uid="uid://quliyll2ju6s" path="res://Assets/Mob/LowerArm2.png" id="3_cqkmb"]
+[ext_resource type="Texture2D" uid="uid://cvgnjyspet8fr" path="res://Assets/Mob/LowerLeg1.png" id="4_8o13s"]
+[ext_resource type="Texture2D" uid="uid://n12kcue0ebqs" path="res://Assets/Mob/LowerLeg2.png" id="5_j70so"]
+[ext_resource type="Texture2D" uid="uid://caxvxlmlle3p6" path="res://Assets/Mob/Pelvis.png" id="6_caf3r"]
+[ext_resource type="Texture2D" uid="uid://bbcqaxivggd1x" path="res://Assets/Mob/Ribs.png" id="7_pbkcd"]
+[ext_resource type="Texture2D" uid="uid://cf1n6gpcf01y2" path="res://Assets/Mob/Skull.png" id="8_qvx46"]
+[ext_resource type="Texture2D" uid="uid://cufw32cxw66r6" path="res://Assets/Mob/UpperArm1.png" id="9_sxmr6"]
+[ext_resource type="Texture2D" uid="uid://p7xfyudxgh2p" path="res://Assets/Mob/UpperArm2.png" id="10_5ulxh"]
+[ext_resource type="Texture2D" uid="uid://ik5i1yg2lv3b" path="res://Assets/Mob/UpperLeg1.png" id="11_icii6"]
+[ext_resource type="Texture2D" uid="uid://toxbkst6pak6" path="res://Assets/Mob/UpperLeg2.png" id="12_ku7mi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ixkh"]
+size = Vector2(1001.27, 1437.39)
+
+[node name="Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_mpe1p")
+
+[node name="LowerArm1" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("2_yxwy1")
+
+[node name="LowerArm2" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("3_cqkmb")
+
+[node name="LowerLeg1" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("4_8o13s")
+
+[node name="LowerLeg2" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("5_j70so")
+
+[node name="Pelvis" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("6_caf3r")
+
+[node name="Ribs" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("7_pbkcd")
+
+[node name="Skull" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("8_qvx46")
+
+[node name="UpperArm1" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("9_sxmr6")
+
+[node name="UpperArm2" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("10_5ulxh")
+
+[node name="UpperLeg1" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("11_icii6")
+
+[node name="UpperLeg2" type="Sprite2D" parent="."]
+position = Vector2(64, 53)
+texture = ExtResource("12_ku7mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(61.5, 95.3104)
+scale = Vector2(0.841933, 0.824147)
+shape = SubResource("RectangleShape2D_0ixkh")
