@@ -1,9 +1,9 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
-# No project files, just exports
+# Art software project files
 *.kra
 *.kra~
-*.svg
-*.svg.import
 *.png~
+*.import
+MilkTankBase.svg
