@@ -10,6 +10,8 @@ enum IsBuying {
 
 public partial class Level : Node2D {
     public static PackedScene hayBaleScene;
+    public static PackedScene healthDeathScene;
+    public static PackedScene milkDeathScene;
     public static Level SingletonInstance = null;
     [Export]
     public int Width {get; set;} = 15;
@@ -19,13 +21,13 @@ public partial class Level : Node2D {
     IsBuying isBuying = IsBuying.Nothing;
     public Level() {
         hayBaleScene = (PackedScene)ResourceLoader.Load("res://Scenes/HayBale.tscn");
+        healthDeathScene = (PackedScene)ResourceLoader.Load("res://Scenes/HealthDeath.tscn");
+        milkDeathScene = (PackedScene)ResourceLoader.Load("res://Scenes/MilkDeath.tscn");
         if (hayBaleScene == null) {
             throw new Exception("Hay bale scene couldn't be loaded by level");
         }
         StaticGameInfo.InitLevel(Width, Height);
-        if (SingletonInstance == null) {
-            SingletonInstance = this;
-        }
+        SingletonInstance = this;
     }
     public override void _EnterTree() {
         base._EnterTree();
@@ -87,6 +89,16 @@ public partial class Level : Node2D {
         bale.GridPos = gridPos;
         bale.SetScreenSpaceFromGridSpace();
         AddChild(bale);
+    }
+
+    public void HealthDeath() {
+        DeathScreen hd = (DeathScreen)healthDeathScene.Instantiate();
+        AddChild(hd);
+    }
+
+    public void MilkDeath() {
+        DeathScreen md = (DeathScreen)milkDeathScene.Instantiate();
+        AddChild(md);
     }
 }
 

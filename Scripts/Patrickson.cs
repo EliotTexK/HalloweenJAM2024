@@ -18,7 +18,6 @@ public partial class Patrickson : GridObject {
         HitTintTimer = new Timer();
         HitTintTimer.Timeout += OnHitTintTimeout;
         AddChild(HitTintTimer);
-        TreeExiting += OnExitTree;
     }
     public void TakeDamage(int damage) {
         Health -= damage;
@@ -26,7 +25,10 @@ public partial class Patrickson : GridObject {
         if (Health <= 0) {
             Node2D newInstance = (Node2D)SpawnOnDeath.Instantiate();
             GetParent().AddChild(newInstance);
+            Level.SingletonInstance.HealthDeath();
             newInstance.GlobalPosition = GlobalPosition;
+            StaticGameInfo.LoseCondition = true;
+            StaticGameInfo.Player = null;
             QueueFree();
         }
         TintMaterial.SetShaderParameter("intensity",0.6f);
@@ -34,9 +36,6 @@ public partial class Patrickson : GridObject {
     }
     public void OnHitTintTimeout() {
         TintMaterial.SetShaderParameter("intensity",0.0f);
-    }
-    public static void OnExitTree() {
-        StaticGameInfo.Player = null;
     }
 }
 

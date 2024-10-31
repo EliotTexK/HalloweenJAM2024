@@ -22,6 +22,7 @@ public static partial class StaticGameInfo {
 	public static WeakRef[,] Grid {get; set;}
 	public static WeakRef Player;
 	public static int Money = 1000;
+	public static bool LoseCondition = false;
 	// TODO: If we have time, consider sorting skeletons by distance to milk tanks,
 	//       so that they don't collide with each other and congest. But hey, maybe
 	//       congestion could be a cool game mechanic, so maybe don't sort.
@@ -38,6 +39,7 @@ public static partial class StaticGameInfo {
 		Hounds = new HashSet<WeakRef>();
 		HerbicideDispensers = new HashSet<WeakRef>();
 		HayBales = new HashSet<WeakRef>();
+		LoseCondition = false;
 	}
 	public static GridObject QueryMap(Vector2I pos) {
 		var wr = Grid[pos.X,pos.Y];
@@ -88,6 +90,7 @@ public static partial class StaticGameInfo {
 		// Call this once the player has selected their input, update all objects
 		// The Game UI should "react" to the state changes (e.g. smoothly interpolate position changes, play animations),
 		// which should happen in the _Process function, not as a result of calling UpdateAllObjects
+		if (LoseCondition) return;
 
 		// Player
 		if (Player != null) {

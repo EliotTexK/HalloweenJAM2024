@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="HalloweenJAM2024"
-run/main_scene="res://Scenes/TestLevel.tscn"
+run/main_scene="res://Scenes/Level1.tscn"
 config/features=PackedStringArray("4.3", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalMusic="*res://Scenes/GlobalMusic.tscn"
 
 [dotnet]
 
@@ -36,3 +40,4 @@ buy_hound={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

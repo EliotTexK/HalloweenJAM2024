@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://bkklggli3i2yg"]
+
+[ext_resource type="Script" path="res://Scripts/Slide.cs" id="1_ge2b4"]
+[ext_resource type="PackedScene" uid="uid://bobqevcxh8bb7" path="res://Scenes/Tutorial.tscn" id="2_835gy"]
+[ext_resource type="Texture2D" uid="uid://sb5waknbgcrd" path="res://Assets/PatricksonParts/Body.png" id="2_i6jsa"]
+[ext_resource type="Texture2D" uid="uid://dkycp1xi4xyh6" path="res://Assets/PatricksonParts/Head.png" id="3_qbaxd"]
+[ext_resource type="Texture2D" uid="uid://cuc0m0p5ravc0" path="res://Assets/PatricksonParts/ArmAndGun.png" id="4_0vbwv"]
+[ext_resource type="Texture2D" uid="uid://p37ydc6aj0hs" path="res://Assets/MilkPail.png" id="5_gnmvv"]
+[ext_resource type="Texture2D" uid="uid://c5kq44k701nso" path="res://Assets/MilkTank.png" id="6_hdsaf"]
+[ext_resource type="Texture2D" uid="uid://dn518orto2ibk" path="res://Assets/SkeletonParts/Skull.png" id="7_os5mw"]
+[ext_resource type="Texture2D" uid="uid://buy165yd6dvfv" path="res://Assets/SkeletonParts/SkullCracked.png" id="8_smpmi"]
+
+[sub_resource type="Theme" id="Theme_5dmgg"]
+default_font_size = 60
+
+[node name="Plot" type="Node2D"]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+script = ExtResource("1_ge2b4")
+Next = ExtResource("2_835gy")
+NextButtonPath = NodePath("CenterContainer/CenterNode/Next")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterNode" type="Node2D" parent="CanvasLayer2/CenterContainer"]
+position = Vector2(0, 70)
+
+[node name="Label" type="Label" parent="CanvasLayer2/CenterContainer/CenterNode"]
+offset_left = -496.0
+offset_top = -248.0
+offset_right = 504.0
+offset_bottom = -48.0
+theme_override_font_sizes/font_size = 20
+text = "Meet Dr. T. Patrickson:
+
+
+
+A retired professor who recently bought a plot of land by an old graveyard with the goal of producing the highest quality ethically sourced dairy.
+
+HOWEVER...
+
+Little does Patrickson know, the people buried in that cemetery long ago used to be very health-conscious. The old bones, imbued with supernatural life as Halloween draws closer, smell a certain calcium-rich substance in a storehouse nearby. In death as in life, they wish to maintain what’s left of their bodies, even if their source of vitamins belongs rightly to another.
+"
+autowrap_mode = 2
+
+[node name="Patrickson" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(-163, -226)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_i6jsa")
+
+[node name="Head" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode/Patrickson"]
+position = Vector2(-14, -6)
+texture = ExtResource("3_qbaxd")
+
+[node name="ArmAndGun" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode/Patrickson"]
+position = Vector2(16, -1)
+texture = ExtResource("4_0vbwv")
+
+[node name="MilkPail" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(-37, -188)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("5_gnmvv")
+
+[node name="MilkPail2" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(38, -192)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("5_gnmvv")
+
+[node name="MilkPail3" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(115, -191)
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("5_gnmvv")
+
+[node name="MilkTank" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(300, -265)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("6_hdsaf")
+
+[node name="Skull" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(84, 41.9982)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_os5mw")
+
+[node name="Skull2" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(186, 41.9982)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_os5mw")
+
+[node name="SkullCracked" type="Sprite2D" parent="CanvasLayer2/CenterContainer/CenterNode"]
+position = Vector2(286, 40.9982)
+scale = Vector2(0.199998, 0.199998)
+texture = ExtResource("8_smpmi")
+
+[node name="Next" type="Button" parent="CanvasLayer2/CenterContainer/CenterNode"]
+z_index = 20
+offset_left = 379.0
+offset_top = 140.0
+offset_right = 525.0
+offset_bottom = 231.0
+theme = SubResource("Theme_5dmgg")
+text = "Next"

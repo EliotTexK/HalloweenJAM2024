@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://c78yf4o4jlp70"]
+
+[ext_resource type="Script" path="res://Scripts/DeathScreen.cs" id="1_57fia"]
+[ext_resource type="Texture2D" uid="uid://beg05x5a7h4wf" path="res://Assets/YouDied.png" id="1_828df"]
+
+[sub_resource type="Theme" id="Theme_pi044"]
+default_font_size = 60
+
+[node name="HealthDeath" type="Node2D"]
+script = ExtResource("1_57fia")
+RestartButtonPath = NodePath("CanvasLayer/CenterContainer/YouDied/Next")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="YouDied" type="Sprite2D" parent="CanvasLayer/CenterContainer"]
+position = Vector2(-11, -1)
+texture = ExtResource("1_828df")
+
+[node name="Next" type="Button" parent="CanvasLayer/CenterContainer/YouDied"]
+z_index = 20
+offset_left = 168.0
+offset_top = 211.0
+offset_right = 552.0
+offset_bottom = 302.0
+theme = SubResource("Theme_pi044")
+text = "Run It Back"

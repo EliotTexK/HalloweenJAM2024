@@ -1,24 +1,24 @@
 using Godot;
 using System;
 
-public class StartButton : Control
+public partial class TitleScreen : Node
 {
 	[Export] public PackedScene SceneToLoad; // Drag and drop the scene in the editor
 
 	public override void _Ready()
 	{
 		// Connect the Start button's pressed signal to the method
-		GetNode<Button>("StartButton").Connect("pressed", this, nameof(OnStartButtonPressed));
+		GetNode<Button>("CanvasLayer/CenterContainer/TitleText/Start").Pressed += OnStartButtonPressed;
 		
 		// Connect the Quit button's pressed signal to the quit method
-		GetNode<Button>("QuitButton").Connect("pressed", this, nameof(OnQuitButtonPressed));
+		GetNode<Button>("CanvasLayer/CenterContainer/TitleText/Quit").Pressed += OnQuitButtonPressed;
 	}
 
 	private void OnStartButtonPressed()
 	{
 		if (SceneToLoad != null)
 		{
-			GetTree().ChangeSceneTo(SceneToLoad);
+			GetTree().ChangeSceneToPacked(SceneToLoad);
 		}
 	}
 

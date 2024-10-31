@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg4iael5v23f3"]
+
+[ext_resource type="Script" path="res://Scripts/TitleScreen.cs" id="1_70ash"]
+[ext_resource type="PackedScene" uid="uid://bkklggli3i2yg" path="res://Scenes/Plot.tscn" id="2_5phld"]
+[ext_resource type="Texture2D" uid="uid://cxbqpx3wg8gvo" path="res://Assets/TitleText.png" id="3_5slf8"]
+[ext_resource type="Texture2D" uid="uid://p37ydc6aj0hs" path="res://Assets/MilkPail.png" id="4_02rfr"]
+
+[sub_resource type="Theme" id="Theme_kqtog"]
+default_font_size = 60
+
+[node name="Title Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70ash")
+SceneToLoad = ExtResource("2_5phld")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleText" type="Sprite2D" parent="CanvasLayer/CenterContainer"]
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("3_5slf8")
+
+[node name="Start" type="Button" parent="CanvasLayer/CenterContainer/TitleText"]
+z_index = 20
+offset_left = 500.0
+offset_top = -468.75
+offset_right = 684.0
+offset_bottom = -372.75
+theme = SubResource("Theme_kqtog")
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="CanvasLayer/CenterContainer/TitleText"]
+z_index = 20
+offset_left = 500.0
+offset_top = -181.25
+offset_right = 684.0
+offset_bottom = -85.25
+theme = SubResource("Theme_kqtog")
+text = "Quit
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="MilkPail" type="Sprite2D" parent="CanvasLayer/CenterContainer"]
+position = Vector2(400, -150)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_02rfr")
