@@ -13,36 +13,48 @@
 [ext_resource type="Texture2D" uid="uid://bwl7jeetx6vxt" path="res://Assets/SkeletonParts/UpperArm1.png" id="10_xo5yr"]
 
 [node name="Skeleton" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 
-[node name="UpperLeg2" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(375, 375)
+transform = Transform2D(1, 0, 0, 1, 375, 375)
+
+[node name="UpperLeg2" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_85dh7")
 
-[node name="LowerLeg2" type="Sprite2D" parent="UpperLeg2"]
+[node name="LowerLeg2" type="Sprite2D" parent="CanvasLayer/UpperLeg2"]
 texture = ExtResource("2_gdtt2")
 
-[node name="Pelvis" type="Sprite2D" parent="."]
+[node name="Pelvis" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_7klnf")
 
-[node name="Ribs" type="Sprite2D" parent="."]
+[node name="Ribs" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_t57up")
 
-[node name="UpperLeg1" type="Sprite2D" parent="."]
+[node name="UpperLeg1" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_xqmdn")
 
-[node name="LowerLeg1" type="Sprite2D" parent="UpperLeg1"]
+[node name="LowerLeg1" type="Sprite2D" parent="CanvasLayer/UpperLeg1"]
 texture = ExtResource("6_lfc56")
 
-[node name="UpperArm2" type="Sprite2D" parent="."]
+[node name="UpperArm2" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_1fje7")
 
-[node name="LowerArm2" type="Sprite2D" parent="UpperArm2"]
+[node name="LowerArm2" type="Sprite2D" parent="CanvasLayer/UpperArm2"]
 texture = ExtResource("8_vawa8")
 
-[node name="Skull" type="Sprite2D" parent="."]
+[node name="Skull" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_7ocfg")
 
-[node name="UpperArm1" type="Sprite2D" parent="."]
+[node name="UpperArm1" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_xo5yr")
 
-[node name="LowerArm1" type="Sprite2D" parent="UpperArm1"]
+[node name="LowerArm1" type="Sprite2D" parent="CanvasLayer/UpperArm1"]
 texture = ExtResource("2_8we0f")
