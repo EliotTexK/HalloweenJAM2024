@@ -1,0 +1,48 @@
+[gd_scene load_steps=12 format=3 uid="uid://djerlkheoxnoq"]
+
+[ext_resource type="Texture2D" uid="uid://bfkb62hxvcq2l" path="res://Assets/SkeletonParts/Pelvis.png" id="1_7klnf"]
+[ext_resource type="Texture2D" uid="uid://d2iro4upcw7s2" path="res://Assets/SkeletonParts/UpperLeg2.png" id="1_85dh7"]
+[ext_resource type="Texture2D" uid="uid://ne4me2lrb0ak" path="res://Assets/SkeletonParts/LowerArm1.png" id="2_8we0f"]
+[ext_resource type="Texture2D" uid="uid://cmhne7qtke3w3" path="res://Assets/SkeletonParts/LowerLeg2.png" id="2_gdtt2"]
+[ext_resource type="Texture2D" uid="uid://chc73gqh8bdav" path="res://Assets/SkeletonParts/Ribs.png" id="4_t57up"]
+[ext_resource type="Texture2D" uid="uid://y7vlqokgvjv" path="res://Assets/SkeletonParts/UpperLeg1.png" id="5_xqmdn"]
+[ext_resource type="Texture2D" uid="uid://dp6fxgtcndjt" path="res://Assets/SkeletonParts/LowerLeg1.png" id="6_lfc56"]
+[ext_resource type="Texture2D" uid="uid://b0qh30erc72wk" path="res://Assets/SkeletonParts/UpperArm2.png" id="7_1fje7"]
+[ext_resource type="Texture2D" uid="uid://b3qj27js8b7s" path="res://Assets/SkeletonParts/LowerArm2.png" id="8_vawa8"]
+[ext_resource type="Texture2D" uid="uid://dn518orto2ibk" path="res://Assets/SkeletonParts/Skull.png" id="9_7ocfg"]
+[ext_resource type="Texture2D" uid="uid://bwl7jeetx6vxt" path="res://Assets/SkeletonParts/UpperArm1.png" id="10_xo5yr"]
+
+[node name="Skeleton" type="Node2D"]
+
+[node name="UpperLeg2" type="Sprite2D" parent="."]
+texture = ExtResource("1_85dh7")
+
+[node name="LowerLeg2" type="Sprite2D" parent="UpperLeg2"]
+texture = ExtResource("2_gdtt2")
+
+[node name="Pelvis" type="Sprite2D" parent="."]
+texture = ExtResource("1_7klnf")
+
+[node name="Ribs" type="Sprite2D" parent="."]
+texture = ExtResource("4_t57up")
+
+[node name="UpperLeg1" type="Sprite2D" parent="."]
+texture = ExtResource("5_xqmdn")
+
+[node name="LowerLeg1" type="Sprite2D" parent="UpperLeg1"]
+texture = ExtResource("6_lfc56")
+
+[node name="UpperArm2" type="Sprite2D" parent="."]
+texture = ExtResource("7_1fje7")
+
+[node name="LowerArm2" type="Sprite2D" parent="UpperArm2"]
+texture = ExtResource("8_vawa8")
+
+[node name="Skull" type="Sprite2D" parent="."]
+texture = ExtResource("9_7ocfg")
+
+[node name="UpperArm1" type="Sprite2D" parent="."]
+texture = ExtResource("10_xo5yr")
+
+[node name="LowerArm1" type="Sprite2D" parent="UpperArm1"]
+texture = ExtResource("2_8we0f")
