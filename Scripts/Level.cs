@@ -16,6 +16,13 @@ public partial class Level : Node2D {
     public override void _Ready() {
         StaticGameInfo.ComputeSkeletonPath();
     }
+    public override void _Input(InputEvent @event)
+    {
+        base._Input(@event);
+        if (Input.IsActionJustPressed("ui_up")) {
+            StaticGameInfo.UpdateAllObjects();
+        }
+    }
 }
 
 }

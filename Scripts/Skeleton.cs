@@ -10,6 +10,12 @@ public partial class Skeleton : GridObject
         Health = 20;
         StaticGameInfo.Skeletons.Add(WeakRef(this));
     }
+
+    public override void _ExitTree()
+    {
+        base._ExitTree();
+        StaticGameInfo.Skeletons.Remove(WeakRef(this));
+    }
 }
 
 }

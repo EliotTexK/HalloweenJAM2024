@@ -13,18 +13,11 @@ public partial class GridObject : Node2D
 		StaticGameInfo.Grid[GridPos.X, GridPos.Y] = WeakRef(this);
 	}
 	public override void _Process(double delta) {
-		float moveSpeed = 50f;  // Controls the speed of motion
-		float easing = 0.05f;    // Controls the curve's shape (smaller values make it start slower)
-		
 		// Grid space converted to world space
 		Vector2 DesiredPos = GridPos * StaticGameInfo.TILE_LENGTH;
 
-		// Calculate distance and apply easing
-		float distance = Position.DistanceTo(DesiredPos);
-		float easeFactor = 1.0f / (1.0f + Mathf.Exp(-moveSpeed * (distance - easing)));
-
 		// Move towards target
-		GlobalPosition = GlobalPosition.Lerp(DesiredPos, easeFactor * (float)delta);
+		GlobalPosition = GlobalPosition.Lerp(DesiredPos, (float)delta * 10f);
 	}
 	// Align from screen space to grid space
 	public void SetGridSpaceFromScreenSpace() {
@@ -35,6 +28,16 @@ public partial class GridObject : Node2D
 	public void SetScreenSpaceFromGridSpace() {
 		GlobalPosition = GridPos * StaticGameInfo.TILE_LENGTH;
 	}
+	public override void _ExitTree() {
+		StaticGameInfo.Grid[GridPos.X, GridPos.Y] = null;
+		base._ExitTree();
+    }
+	public void MoveOnGrid(Vector2I pos) {
+		StaticGameInfo.Grid[GridPos.X, GridPos.Y] = null;
+		GridPos = pos;
+		StaticGameInfo.Grid[GridPos.X, GridPos.Y] = WeakRef(this);
+	}
+
 }
 
 }

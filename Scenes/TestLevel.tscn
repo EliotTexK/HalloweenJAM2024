@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://hobnguw0t6pk"]
+[gd_scene load_steps=7 format=3 uid="uid://hobnguw0t6pk"]
 
 [ext_resource type="Script" path="res://Scripts/Level.cs" id="1_ag8ix"]
 [ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_xraqh"]
 [ext_resource type="PackedScene" uid="uid://dkgmgxa62km5b" path="res://Scenes/MilkTank.tscn" id="4_df336"]
 [ext_resource type="PackedScene" uid="uid://ctjatuw243vh2" path="res://Scenes/HayBale.tscn" id="5_lf1p4"]
+[ext_resource type="PackedScene" uid="uid://djerlkheoxnoq" path="res://Scenes/Skeleton.tscn" id="6_nt8li"]
 [ext_resource type="Texture2D" uid="uid://gyhppw7y710y" path="res://Assets/Fence.png" id="7_qtq23"]
 
 [node name="Level1" type="Node2D"]
@@ -414,3 +415,12 @@ position = Vector2(5250, 2250)
 
 [node name="HayBale13" parent="Bales" instance=ExtResource("5_lf1p4")]
 position = Vector2(5250, 1500)
+
+[node name="Skeleton" parent="." instance=ExtResource("6_nt8li")]
+position = Vector2(750, 750)
+
+[node name="Skeleton2" parent="." instance=ExtResource("6_nt8li")]
+position = Vector2(750, 3000)
+
+[node name="Skeleton3" parent="." instance=ExtResource("6_nt8li")]
+position = Vector2(1500, 3750)

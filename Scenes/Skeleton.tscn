@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://djerlkheoxnoq"]
+[gd_scene load_steps=13 format=3 uid="uid://djerlkheoxnoq"]
 
+[ext_resource type="Script" path="res://Scripts/Skeleton.cs" id="1_4dxhh"]
 [ext_resource type="Texture2D" uid="uid://bfkb62hxvcq2l" path="res://Assets/SkeletonParts/Pelvis.png" id="1_7klnf"]
 [ext_resource type="Texture2D" uid="uid://d2iro4upcw7s2" path="res://Assets/SkeletonParts/UpperLeg2.png" id="1_85dh7"]
 [ext_resource type="Texture2D" uid="uid://ne4me2lrb0ak" path="res://Assets/SkeletonParts/LowerArm1.png" id="2_8we0f"]
@@ -13,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bwl7jeetx6vxt" path="res://Assets/SkeletonParts/UpperArm1.png" id="10_xo5yr"]
 
 [node name="Skeleton" type="Node2D"]
+script = ExtResource("1_4dxhh")
 
 [node name="Transform" type="Node2D" parent="."]
 position = Vector2(375, 375)
