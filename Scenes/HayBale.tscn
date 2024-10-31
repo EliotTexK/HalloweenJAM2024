@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctjatuw243vh2"]
+
+[ext_resource type="Texture2D" uid="uid://b33415f2dprj5" path="res://Assets/HayBale.png" id="1_66dtq"]
+[ext_resource type="Script" path="res://Scripts/HayBale.cs" id="2_bakh5"]
+
+[node name="HayBale" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_66dtq")
+offset = Vector2(750, 750)
+script = ExtResource("2_bakh5")

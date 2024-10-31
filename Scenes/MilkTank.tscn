@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkgmgxa62km5b"]
+
+[ext_resource type="Texture2D" uid="uid://c5kq44k701nso" path="res://Assets/MilkTank.png" id="1_ypti0"]
+[ext_resource type="Script" path="res://Scripts/MilkTank.cs" id="2_m0dqe"]
+
+[node name="MilkTank" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ypti0")
+offset = Vector2(750, 750)
+script = ExtResource("2_m0dqe")

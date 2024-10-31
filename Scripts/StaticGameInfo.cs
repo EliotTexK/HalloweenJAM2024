@@ -18,10 +18,10 @@ public static partial class StaticGameInfo {
 	// TODO: If we have time, consider sorting skeletons by distance to milk tanks,
 	//       so that they don't collide with each other and congest. But hey, maybe
 	//       congestion could be a cool game mechanic, so maybe don't sort.
-	public static WeakRef[] Skeletons;
-	public static WeakRef[] Hounds;
-	public static WeakRef[] HerbicideDispensers;
-	public static WeakRef[] HayBales; // may not be needed, since bales don't really move on their own
+	public static List<WeakRef> Skeletons;
+	public static List<WeakRef> Hounds;
+	public static List<WeakRef> HerbicideDispensers;
+	public static List<WeakRef> HayBales; // may not be needed, since bales don't really move on their own
 	public static Vector2I MilkLocation;
 	public static SkeletonPathNode[,] SkeletonPath {get; set;}
 	public static void Init(int width, int height) {
