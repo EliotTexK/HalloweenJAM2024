@@ -1,0 +1,79 @@
+[gd_scene load_steps=17 format=3 uid="uid://c2lmank1tk2fw"]
+
+[ext_resource type="Script" path="res://Scripts/Skeleton.cs" id="1_stih7"]
+[ext_resource type="Shader" path="res://Tint.gdshader" id="2_0s6nx"]
+[ext_resource type="Texture2D" uid="uid://d2iro4upcw7s2" path="res://Assets/SkeletonParts/UpperLeg2.png" id="3_obrw0"]
+[ext_resource type="Texture2D" uid="uid://cmhne7qtke3w3" path="res://Assets/SkeletonParts/LowerLeg2.png" id="4_duyoy"]
+[ext_resource type="Texture2D" uid="uid://bfkb62hxvcq2l" path="res://Assets/SkeletonParts/Pelvis.png" id="5_ao80c"]
+[ext_resource type="Texture2D" uid="uid://chc73gqh8bdav" path="res://Assets/SkeletonParts/Ribs.png" id="6_iv5hs"]
+[ext_resource type="Texture2D" uid="uid://y7vlqokgvjv" path="res://Assets/SkeletonParts/UpperLeg1.png" id="7_c3hft"]
+[ext_resource type="Texture2D" uid="uid://dp6fxgtcndjt" path="res://Assets/SkeletonParts/LowerLeg1.png" id="8_715re"]
+[ext_resource type="Texture2D" uid="uid://b0qh30erc72wk" path="res://Assets/SkeletonParts/UpperArm2.png" id="9_mrubv"]
+[ext_resource type="Texture2D" uid="uid://b3qj27js8b7s" path="res://Assets/SkeletonParts/LowerArm2.png" id="10_expny"]
+[ext_resource type="Texture2D" uid="uid://dn518orto2ibk" path="res://Assets/SkeletonParts/Skull.png" id="11_bo6si"]
+[ext_resource type="Texture2D" uid="uid://buy165yd6dvfv" path="res://Assets/SkeletonParts/SkullCracked.png" id="12_enhjp"]
+[ext_resource type="Texture2D" uid="uid://bwl7jeetx6vxt" path="res://Assets/SkeletonParts/UpperArm1.png" id="13_s5ufp"]
+[ext_resource type="Texture2D" uid="uid://ne4me2lrb0ak" path="res://Assets/SkeletonParts/LowerArm1.png" id="14_aqot3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pnid"]
+shader = ExtResource("2_0s6nx")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crd04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_bo6si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_enhjp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Skeleton" type="Node2D"]
+script = ExtResource("1_stih7")
+Health = 6
+
+[node name="Transform" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_6pnid")
+position = Vector2(375, 171)
+scale = Vector2(0.75, 0.75)
+
+[node name="UpperLeg2" type="Sprite2D" parent="Transform"]
+y_sort_enabled = true
+texture = ExtResource("3_obrw0")
+
+[node name="LowerLeg2" type="Sprite2D" parent="Transform/UpperLeg2"]
+texture = ExtResource("4_duyoy")
+
+[node name="Pelvis" type="Sprite2D" parent="Transform"]
+texture = ExtResource("5_ao80c")
+
+[node name="Ribs" type="Sprite2D" parent="Transform"]
+texture = ExtResource("6_iv5hs")
+
+[node name="UpperLeg1" type="Sprite2D" parent="Transform"]
+texture = ExtResource("7_c3hft")
+
+[node name="LowerLeg1" type="Sprite2D" parent="Transform/UpperLeg1"]
+texture = ExtResource("8_715re")
+
+[node name="UpperArm2" type="Sprite2D" parent="Transform"]
+texture = ExtResource("9_mrubv")
+
+[node name="LowerArm2" type="Sprite2D" parent="Transform/UpperArm2"]
+texture = ExtResource("10_expny")
+
+[node name="Skull" type="AnimatedSprite2D" parent="Transform"]
+sprite_frames = SubResource("SpriteFrames_crd04")
+frame = 1
+
+[node name="UpperArm1" type="Sprite2D" parent="Transform"]
+texture = ExtResource("13_s5ufp")
+
+[node name="LowerArm1" type="Sprite2D" parent="Transform/UpperArm1"]
+texture = ExtResource("14_aqot3")
