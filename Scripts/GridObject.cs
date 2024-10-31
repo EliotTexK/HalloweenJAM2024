@@ -3,13 +3,14 @@ using System;
 
 namespace COMEONANDSLAM {
 
-public partial class GridObject : Node2D
-{
+public partial class GridObject : Node2D {
 	public Vector2I GridPos;
+	[Export]
 	public int Health;
 	public override void _Ready(){
 		base._Ready();
 		SetGridSpaceFromScreenSpace();
+		SetScreenSpaceFromGridSpace();
 		StaticGameInfo.Grid[GridPos.X, GridPos.Y] = WeakRef(this);
 	}
 	public override void _Process(double delta) {
@@ -17,7 +18,7 @@ public partial class GridObject : Node2D
 		Vector2 DesiredPos = GridPos * StaticGameInfo.TILE_LENGTH;
 
 		// Move towards target
-		GlobalPosition = GlobalPosition.Lerp(DesiredPos, (float)delta * 10f);
+		GlobalPosition = GlobalPosition.Lerp(DesiredPos, (float)delta * 20f);
 	}
 	// Align from screen space to grid space
 	public void SetGridSpaceFromScreenSpace() {

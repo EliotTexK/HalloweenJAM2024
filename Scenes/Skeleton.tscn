@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://djerlkheoxnoq"]
+[gd_scene load_steps=17 format=3 uid="uid://djerlkheoxnoq"]
 
 [ext_resource type="Script" path="res://Scripts/Skeleton.cs" id="1_4dxhh"]
 [ext_resource type="Texture2D" uid="uid://bfkb62hxvcq2l" path="res://Assets/SkeletonParts/Pelvis.png" id="1_7klnf"]
 [ext_resource type="Texture2D" uid="uid://d2iro4upcw7s2" path="res://Assets/SkeletonParts/UpperLeg2.png" id="1_85dh7"]
+[ext_resource type="Shader" path="res://Tint.gdshader" id="2_2v57h"]
 [ext_resource type="Texture2D" uid="uid://ne4me2lrb0ak" path="res://Assets/SkeletonParts/LowerArm1.png" id="2_8we0f"]
 [ext_resource type="Texture2D" uid="uid://cmhne7qtke3w3" path="res://Assets/SkeletonParts/LowerLeg2.png" id="2_gdtt2"]
 [ext_resource type="Texture2D" uid="uid://chc73gqh8bdav" path="res://Assets/SkeletonParts/Ribs.png" id="4_t57up"]
@@ -12,15 +13,38 @@
 [ext_resource type="Texture2D" uid="uid://b3qj27js8b7s" path="res://Assets/SkeletonParts/LowerArm2.png" id="8_vawa8"]
 [ext_resource type="Texture2D" uid="uid://dn518orto2ibk" path="res://Assets/SkeletonParts/Skull.png" id="9_7ocfg"]
 [ext_resource type="Texture2D" uid="uid://bwl7jeetx6vxt" path="res://Assets/SkeletonParts/UpperArm1.png" id="10_xo5yr"]
+[ext_resource type="Texture2D" uid="uid://buy165yd6dvfv" path="res://Assets/SkeletonParts/SkullCracked.png" id="11_neqmm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pnid"]
+shader = ExtResource("2_2v57h")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_crd04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_7ocfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_neqmm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Skeleton" type="Node2D"]
 script = ExtResource("1_4dxhh")
+Health = 12
 
-[node name="Transform" type="Node2D" parent="."]
-position = Vector2(375, 375)
-scale = Vector2(0.5, 0.5)
+[node name="Transform" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_6pnid")
+position = Vector2(375, 171)
+scale = Vector2(0.75, 0.75)
 
 [node name="UpperLeg2" type="Sprite2D" parent="Transform"]
+y_sort_enabled = true
 texture = ExtResource("1_85dh7")
 
 [node name="LowerLeg2" type="Sprite2D" parent="Transform/UpperLeg2"]
@@ -44,8 +68,8 @@ texture = ExtResource("7_1fje7")
 [node name="LowerArm2" type="Sprite2D" parent="Transform/UpperArm2"]
 texture = ExtResource("8_vawa8")
 
-[node name="Skull" type="Sprite2D" parent="Transform"]
-texture = ExtResource("9_7ocfg")
+[node name="Skull" type="AnimatedSprite2D" parent="Transform"]
+sprite_frames = SubResource("SpriteFrames_crd04")
 
 [node name="UpperArm1" type="Sprite2D" parent="Transform"]
 texture = ExtResource("10_xo5yr")
