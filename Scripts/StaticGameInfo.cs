@@ -85,6 +85,53 @@ public static partial class StaticGameInfo {
 			}
 		}
 	}
+	public static SkeletonPathNode[,] ComputeProspectiveSkeletonPath(Vector2I new_wall) {
+		SkeletonPathNode[,] prospective = new SkeletonPathNode[SkeletonPath.GetLength(0), SkeletonPath.GetLength(1)];
+		Queue<Vector2I> frontier = new Queue<Vector2I>();
+		frontier.Enqueue(MilkLocation);
+		for (int x = 0; x < prospective.GetLength(0); x++) {
+			for (int y = 0; y < prospective.GetLength(1); y++) {
+				prospective[x,y] = SkeletonPathNode.Unexplored;
+			}
+		}
+		prospective[MilkLocation.X, MilkLocation.Y] = SkeletonPathNode.Target;
+		while (frontier.Count > 0) {
+			Vector2I front = frontier.Dequeue();
+			var neighbors = new Dictionary<Vector2I, SkeletonPathNode> {
+				{new Vector2I(front.X,front.Y-1), SkeletonPathNode.S},
+				{new Vector2I(front.X,front.Y+1), SkeletonPathNode.N},
+				{new Vector2I(front.X+1,front.Y), SkeletonPathNode.W},
+				{new Vector2I(front.X-1,front.Y), SkeletonPathNode.E}
+			};
+			foreach (var neighbor in neighbors) {
+				int nbrX = neighbor.Key.X; int nbrY = neighbor.Key.Y;
+				if (IsInGridBounds(neighbor.Key) && prospective[nbrX,nbrY] == SkeletonPathNode.Unexplored) {
+					var qm = QueryMap(neighbor.Key);
+					if (qm is HayBale || neighbor.Key == new_wall) {
+						prospective[neighbor.Key.X,neighbor.Key.Y] = SkeletonPathNode.Wall;
+					} else {
+						frontier.Enqueue(neighbor.Key);
+						prospective[neighbor.Key.X,neighbor.Key.Y] = neighbor.Value;
+					}
+				}
+			}
+		}
+		return prospective;
+	}
+	public static bool CheckIfBlocked(Vector2I new_wall) {
+		var prospective = ComputeProspectiveSkeletonPath(new_wall);
+		foreach (WeakRef skel_ref in Skeletons) {
+			var skel = (Skeleton)skel_ref.GetRef();
+			if (skel == null) {
+				Skeletons.Remove(skel_ref);
+				continue;
+			}
+			if (prospective[skel.GridPos.X,skel.GridPos.Y] == SkeletonPathNode.Unexplored) {
+				return true;
+			}
+		}
+		return false;
+	}
 	public static void UpdateAllObjects(PlayerAction playerAction, Vector2I relativeTarget) {
 		// Hook this up to a callback to whatever UI is being used to select player actions
 		// Call this once the player has selected their input, update all objects
@@ -112,8 +159,10 @@ public static partial class StaticGameInfo {
 				case PlayerAction.PlaceBale:
 					if (Money < 80) return; // not enough money don't take turn
 					if (QueryMap(player.GridPos + relativeTarget) != null) return; // something is in the way, don't take turn
+					var new_bale_pos = player.GridPos + relativeTarget;
+					if (CheckIfBlocked(new_bale_pos)) return;
 					Money -= 80;
-					Level.SingletonInstance.AddBale(player.GridPos + relativeTarget);
+					Level.SingletonInstance.AddBale(new_bale_pos);
 					ComputeSkeletonPath();
 					break;
 			}

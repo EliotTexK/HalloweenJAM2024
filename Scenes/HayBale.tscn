@@ -1,10 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctjatuw243vh2"]
+[gd_scene load_steps=5 format=3 uid="uid://ctjatuw243vh2"]
 
 [ext_resource type="Texture2D" uid="uid://b33415f2dprj5" path="res://Assets/HayBale.png" id="1_66dtq"]
+[ext_resource type="Shader" path="res://Tint.gdshader" id="2_5dxlm"]
 [ext_resource type="Script" path="res://Scripts/HayBale.cs" id="2_bakh5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk043"]
+shader = ExtResource("2_5dxlm")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0
 
 [node name="HayBale" type="Sprite2D"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_66dtq")
 offset = Vector2(750, 750)
 script = ExtResource("2_bakh5")
+Health = 10
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_jk043")
+
+[node name="HayBale" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(48, 36)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_66dtq")
+offset = Vector2(750, 750)
