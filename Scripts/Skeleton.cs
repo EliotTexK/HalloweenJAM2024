@@ -30,6 +30,7 @@ public partial class Skeleton : GridObject {
         if (Health <= 0) {
             StaticGameInfo.Money += SKELETON_MONEY_DROP;
             Level.SingletonInstance.HUD_Display.UpdateMoney();
+            Level.SingletonInstance.NotifySkelDeath();
             this.QueueFree();
         }
         TintMaterial.SetShaderParameter("intensity",0.6f);

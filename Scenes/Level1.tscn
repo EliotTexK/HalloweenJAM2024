@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://hobnguw0t6pk"]
+[gd_scene load_steps=10 format=3 uid="uid://hobnguw0t6pk"]
 
 [ext_resource type="Script" path="res://Scripts/Level.cs" id="1_ag8ix"]
+[ext_resource type="PackedScene" uid="uid://bswm5kmgo8a51" path="res://Scenes/Level2.tscn" id="2_efrfj"]
 [ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_xraqh"]
 [ext_resource type="PackedScene" uid="uid://qtkal3jswacf" path="res://Scenes/HUD.tscn" id="3_x3jqj"]
 [ext_resource type="PackedScene" uid="uid://yip47qb5iy84" path="res://Scenes/MilkTank.tscn" id="4_df336"]
@@ -9,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dqrj6hxi1owyf" path="res://Scenes/Patrickson.tscn" id="7_j1pli"]
 [ext_resource type="PackedScene" uid="uid://c2lmank1tk2fw" path="res://Scenes/SkeletonBangedUp.tscn" id="16_g6laa"]
 
-[node name="TestLevel" type="Node2D"]
+[node name="Level1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ag8ix")
+NextLevel = ExtResource("2_efrfj")
 
 [node name="GrassTex" type="Sprite2D" parent="."]
 z_index = -1

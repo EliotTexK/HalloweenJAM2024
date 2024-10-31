@@ -12,17 +12,22 @@ public partial class Level : Node2D {
     public static PackedScene hayBaleScene;
     public static PackedScene healthDeathScene;
     public static PackedScene milkDeathScene;
+    public static PackedScene victoryScene;
     public static Level SingletonInstance = null;
+    [Export]
+    public PackedScene NextLevel;
     [Export]
     public int Width {get; set;} = 15;
     [Export]
     public int Height {get; set;} = 10;
     public HUD HUD_Display;
+    public int SkeletonsLeft;
     IsBuying isBuying = IsBuying.Nothing;
     public Level() {
         hayBaleScene = (PackedScene)ResourceLoader.Load("res://Scenes/HayBale.tscn");
         healthDeathScene = (PackedScene)ResourceLoader.Load("res://Scenes/HealthDeath.tscn");
         milkDeathScene = (PackedScene)ResourceLoader.Load("res://Scenes/MilkDeath.tscn");
+        victoryScene = (PackedScene)ResourceLoader.Load("res://Scenes/WinScreen.tscn");
         if (hayBaleScene == null) {
             throw new Exception("Hay bale scene couldn't be loaded by level");
         }
@@ -36,6 +41,7 @@ public partial class Level : Node2D {
     public override void _Ready() {
         base._Ready();
         StaticGameInfo.ComputeSkeletonPath();
+        SkeletonsLeft = StaticGameInfo.Skeletons.Count;
     }
     public override void _Input(InputEvent @event)
     {
@@ -99,6 +105,15 @@ public partial class Level : Node2D {
     public void MilkDeath() {
         DeathScreen md = (DeathScreen)milkDeathScene.Instantiate();
         AddChild(md);
+    }
+
+    public void NotifySkelDeath(){
+        SkeletonsLeft -= 1;
+        if (SkeletonsLeft <= 0) {
+            Slide v = (Slide)victoryScene.Instantiate();
+            v.Next = NextLevel;
+            AddChild(v);
+        }
     }
 }
 

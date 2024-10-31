@@ -1,0 +1,202 @@
+[gd_scene load_steps=9 format=3 uid="uid://bswm5kmgo8a51"]
+
+[ext_resource type="Script" path="res://Scripts/Level.cs" id="1_m3b6y"]
+[ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_wfnqu"]
+[ext_resource type="PackedScene" uid="uid://qtkal3jswacf" path="res://Scenes/HUD.tscn" id="3_e65ce"]
+[ext_resource type="PackedScene" uid="uid://yip47qb5iy84" path="res://Scenes/MilkTank.tscn" id="4_n3h33"]
+[ext_resource type="PackedScene" uid="uid://dqrj6hxi1owyf" path="res://Scenes/Patrickson.tscn" id="5_0bkxj"]
+[ext_resource type="PackedScene" uid="uid://ci2nhfi84vupq" path="res://Scenes/Fence.tscn" id="6_cpx47"]
+[ext_resource type="PackedScene" uid="uid://djerlkheoxnoq" path="res://Scenes/Skeleton.tscn" id="7_8d4n7"]
+[ext_resource type="PackedScene" uid="uid://c2lmank1tk2fw" path="res://Scenes/SkeletonBangedUp.tscn" id="8_iysb8"]
+
+[node name="TestLevel" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_m3b6y")
+
+[node name="GrassTex" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(4500, 4500)
+scale = Vector2(2, 2)
+texture = ExtResource("2_wfnqu")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000, 20000)
+
+[node name="HUD" parent="." instance=ExtResource("3_e65ce")]
+
+[node name="MilkTank" parent="." instance=ExtResource("4_n3h33")]
+
+[node name="Patrickson" parent="." instance=ExtResource("5_0bkxj")]
+position = Vector2(750, 1500)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(5250, 3000)
+zoom = Vector2(0.1, 0.1)
+
+[node name="Bales" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="BorderFence" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Fence" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, -750)
+
+[node name="Fence21" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(0, -750)
+
+[node name="Fence22" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(750, -750)
+
+[node name="Fence23" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(1500, -750)
+
+[node name="Fence24" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(2250, -750)
+
+[node name="Fence25" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(3000, -750)
+
+[node name="Fence26" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(3750, -750)
+
+[node name="Fence27" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(4500, -750)
+
+[node name="Fence28" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(5250, -750)
+
+[node name="Fence29" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(6000, -750)
+
+[node name="Fence30" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(6750, -750)
+
+[node name="Fence31" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(7500, -750)
+
+[node name="Fence32" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(8250, -750)
+
+[node name="Fence33" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(9000, -750)
+
+[node name="Fence34" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(9750, -750)
+
+[node name="Fence2" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 0)
+
+[node name="Fence3" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 750)
+
+[node name="Fence4" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 1500)
+
+[node name="Fence5" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 2250)
+
+[node name="Fence6" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 3000)
+
+[node name="Fence7" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 3750)
+
+[node name="Fence8" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 4500)
+
+[node name="Fence9" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 5250)
+
+[node name="Fence10" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 6000)
+
+[node name="Fence11" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, -750)
+
+[node name="Fence35" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 7500)
+
+[node name="Fence36" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(0, 7500)
+
+[node name="Fence37" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(750, 7500)
+
+[node name="Fence38" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(1500, 7500)
+
+[node name="Fence39" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(2250, 7500)
+
+[node name="Fence40" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(3000, 7500)
+
+[node name="Fence41" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(3750, 7500)
+
+[node name="Fence42" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(4500, 7500)
+
+[node name="Fence43" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(5250, 7500)
+
+[node name="Fence44" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(6000, 7500)
+
+[node name="Fence45" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(6750, 7500)
+
+[node name="Fence46" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(7500, 7500)
+
+[node name="Fence47" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(8250, 7500)
+
+[node name="Fence48" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(9000, 7500)
+
+[node name="Fence49" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(9750, 7500)
+
+[node name="Fence50" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 7500)
+
+[node name="Fence12" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 0)
+
+[node name="Fence13" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 750)
+
+[node name="Fence14" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 1500)
+
+[node name="Fence15" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 2250)
+
+[node name="Fence16" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 3000)
+
+[node name="Fence17" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 3750)
+
+[node name="Fence18" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 4500)
+
+[node name="Fence19" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 5250)
+
+[node name="Fence20" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 6000)
+
+[node name="Fence51" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(-750, 6750)
+
+[node name="Fence52" parent="BorderFence" instance=ExtResource("6_cpx47")]
+position = Vector2(10500, 6750)
+
+[node name="Skeleton" parent="." instance=ExtResource("7_8d4n7")]
+position = Vector2(9000, 6750)
+
+[node name="Skeleton4" parent="." instance=ExtResource("8_iysb8")]
+position = Vector2(9750, 6750)
