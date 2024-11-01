@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1rqgfegf0esu"]
+
+[ext_resource type="Script" path="res://Scripts/Slide.cs" id="1_nixw0"]
+[ext_resource type="Texture2D" uid="uid://df51ag05tcwt6" path="res://Assets/Victory.png" id="2_o40ec"]
+[ext_resource type="PackedScene" uid="uid://cg4iael5v23f3" path="res://Scenes/TitleScreen.tscn" id="2_x8xau"]
+
+[sub_resource type="Theme" id="Theme_ktdwq"]
+default_font_size = 60
+
+[node name="HealthDeath" type="Node2D"]
+script = ExtResource("1_nixw0")
+Next = ExtResource("2_x8xau")
+NextButtonPath = NodePath("CanvasLayer/CenterContainer/Victory/Next")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Victory" type="Sprite2D" parent="CanvasLayer/CenterContainer"]
+position = Vector2(-28, -67)
+texture = ExtResource("2_o40ec")
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/Victory"]
+offset_left = -269.0
+offset_top = 150.0
+offset_right = 362.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0.949187, 0.854902, 0.133364, 1)
+theme_override_font_sizes/font_size = 40
+text = "You and your dairy survived...
+Until Next Halloween!"
+
+[node name="Next" type="Button" parent="CanvasLayer/CenterContainer/Victory"]
+z_index = 20
+offset_left = 230.0
+offset_top = 241.0
+offset_right = 575.0
+offset_bottom = 332.0
+theme = SubResource("Theme_ktdwq")
+text = "Title Screen"

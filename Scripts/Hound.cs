@@ -19,7 +19,6 @@ public partial class Hound : GridObject {
     }
     public void TakeDamage(int damage) {
         Health -= damage;
-        Level.SingletonInstance.HUD_Display.SetHealth(Health);
         if (Health <= 0) {
             QueueFree();
         }

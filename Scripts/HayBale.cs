@@ -8,8 +8,7 @@ public partial class HayBale : GridObject {
     Timer HitTintTimer;
 	public override void _Ready() {
         base._Ready();
-        Health = 20;
-        Level.SingletonInstance.HUD_Display.SetHealth(Health);
+        Health = 10;
         // Gotta duplicate so the shader applies to different enemies differently
         TintMaterial = (ShaderMaterial)GetNode<CanvasGroup>("CanvasGroup").Material.Duplicate();
         GetNode<CanvasGroup>("CanvasGroup").Material = TintMaterial;
@@ -19,7 +18,6 @@ public partial class HayBale : GridObject {
     }
     public void TakeDamage(int damage) {
         Health -= damage;
-        Level.SingletonInstance.HUD_Display.SetHealth(Health);
         if (Health <= 0) {
             QueueFree();
         }

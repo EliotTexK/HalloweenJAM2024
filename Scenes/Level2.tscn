@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bswm5kmgo8a51"]
+[gd_scene load_steps=11 format=3 uid="uid://bswm5kmgo8a51"]
 
 [ext_resource type="Script" path="res://Scripts/Level.cs" id="1_m3b6y"]
+[ext_resource type="PackedScene" uid="uid://1tlmgrvld5to" path="res://Scenes/Level3.tscn" id="2_fadt0"]
 [ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_wfnqu"]
 [ext_resource type="PackedScene" uid="uid://qtkal3jswacf" path="res://Scenes/HUD.tscn" id="3_e65ce"]
 [ext_resource type="PackedScene" uid="uid://yip47qb5iy84" path="res://Scenes/MilkTank.tscn" id="4_n3h33"]
@@ -10,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://c2lmank1tk2fw" path="res://Scenes/SkeletonBangedUp.tscn" id="8_iysb8"]
 [ext_resource type="PackedScene" uid="uid://ctjatuw243vh2" path="res://Scenes/HayBale.tscn" id="9_2gycm"]
 
-[node name="TestLevel" type="Node2D"]
+[node name="Level2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_m3b6y")
+startingMoney = 2000
+NextLevel = ExtResource("2_fadt0")
 
 [node name="GrassTex" type="Sprite2D" parent="."]
 z_index = -1
@@ -29,7 +32,7 @@ region_rect = Rect2(0, 0, 20000, 20000)
 position = Vector2(4500, 3000)
 
 [node name="Patrickson" parent="." instance=ExtResource("5_0bkxj")]
-position = Vector2(750, 1500)
+position = Vector2(5250, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(5250, 3000)
@@ -37,6 +40,96 @@ zoom = Vector2(0.1, 0.1)
 
 [node name="Bales" type="Node2D" parent="."]
 y_sort_enabled = true
+
+[node name="HayBale" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(4500, 3750)
+
+[node name="HayBale2" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(3750, 3750)
+
+[node name="HayBale3" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(3750, 3000)
+
+[node name="HayBale4" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(3750, 2250)
+
+[node name="HayBale5" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(4500, 2250)
+
+[node name="HayBale6" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(4500, 1500)
+
+[node name="HayBale7" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(5250, 3750)
+
+[node name="HayBale8" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6000, 3000)
+
+[node name="HayBale21" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(7500, 2250)
+
+[node name="HayBale22" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6750, 2250)
+
+[node name="HayBale23" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(8250, 2250)
+
+[node name="HayBale24" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(9000, 3000)
+
+[node name="HayBale25" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(7500, 4500)
+
+[node name="HayBale26" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(7500, 4500)
+
+[node name="HayBale27" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(8250, 4500)
+
+[node name="HayBale28" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(9000, 4500)
+
+[node name="HayBale30" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6000, 4500)
+
+[node name="HayBale31" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6000, 5250)
+
+[node name="HayBale29" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(9750, 4500)
+
+[node name="HayBale9" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6000, 2250)
+
+[node name="HayBale10" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6000, 1500)
+
+[node name="HayBale11" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(6000, 750)
+
+[node name="HayBale13" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(0, 4500)
+
+[node name="HayBale14" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(750, 5250)
+
+[node name="HayBale15" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(2250, 6000)
+
+[node name="HayBale16" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(1500, 6000)
+
+[node name="HayBale17" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(3000, 6000)
+
+[node name="HayBale18" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(3750, 6000)
+
+[node name="HayBale19" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(3750, 6000)
+
+[node name="HayBale20" parent="Bales" instance=ExtResource("9_2gycm")]
+position = Vector2(4500, 6750)
 
 [node name="BorderFence" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -198,73 +291,25 @@ position = Vector2(-750, 6750)
 position = Vector2(10500, 6750)
 
 [node name="Skeleton" parent="." instance=ExtResource("7_8d4n7")]
-position = Vector2(9000, 6750)
+position = Vector2(8250, 0)
+
+[node name="Skeleton5" parent="." instance=ExtResource("7_8d4n7")]
+position = Vector2(8250, 1500)
+
+[node name="Skeleton6" parent="." instance=ExtResource("7_8d4n7")]
+position = Vector2(8250, 750)
+
+[node name="Skeleton7" parent="." instance=ExtResource("7_8d4n7")]
+position = Vector2(7500, 750)
 
 [node name="Skeleton4" parent="." instance=ExtResource("8_iysb8")]
-position = Vector2(9750, 6750)
+position = Vector2(7500, 1500)
 
-[node name="HayBale" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(4500, 3750)
-
-[node name="HayBale2" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(3750, 3750)
-
-[node name="HayBale3" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(3750, 3000)
-
-[node name="HayBale4" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(3750, 2250)
-
-[node name="HayBale5" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(4500, 2250)
-
-[node name="HayBale6" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(4500, 1500)
-
-[node name="HayBale7" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(5250, 3750)
-
-[node name="HayBale8" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(6000, 3000)
-
-[node name="HayBale9" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(6000, 2250)
-
-[node name="HayBale10" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(6000, 1500)
-
-[node name="HayBale11" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(6000, 750)
-
-[node name="HayBale12" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(5250, 0)
-
-[node name="HayBale13" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(0, 4500)
-
-[node name="HayBale14" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(750, 5250)
-
-[node name="HayBale15" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(2250, 6000)
-
-[node name="HayBale16" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(1500, 6000)
-
-[node name="HayBale17" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(3000, 6000)
-
-[node name="HayBale18" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(3750, 6000)
-
-[node name="HayBale19" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(3750, 6000)
-
-[node name="HayBale20" parent="." instance=ExtResource("9_2gycm")]
-position = Vector2(4500, 6750)
+[node name="Skeleton8" parent="." instance=ExtResource("8_iysb8")]
+position = Vector2(9000, 750)
 
 [node name="Skeleton2" parent="." instance=ExtResource("7_8d4n7")]
-position = Vector2(9750, 1500)
+position = Vector2(9000, 0)
 
 [node name="Skeleton3" parent="." instance=ExtResource("7_8d4n7")]
-position = Vector2(6750, 2250)
+position = Vector2(9750, 0)

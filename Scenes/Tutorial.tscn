@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bobqevcxh8bb7"]
+[gd_scene load_steps=16 format=3 uid="uid://bobqevcxh8bb7"]
 
 [ext_resource type="Script" path="res://Scripts/Slide.cs" id="1_emm4t"]
 [ext_resource type="PackedScene" uid="uid://hobnguw0t6pk" path="res://Scenes/Level1.tscn" id="2_io8s7"]
 [ext_resource type="Texture2D" uid="uid://dtot4digq2ai6" path="res://Assets/KeySymbol.png" id="3_45mcp"]
 [ext_resource type="Texture2D" uid="uid://inw6q3ovqqt4" path="res://Assets/Arrow.png" id="4_nod5m"]
+[ext_resource type="Texture2D" uid="uid://bol72sxf8mo88" path="res://Assets/CashSymbol.png" id="5_0ooe1"]
 [ext_resource type="Texture2D" uid="uid://p37ydc6aj0hs" path="res://Assets/MilkPail.png" id="5_otjnm"]
 [ext_resource type="Texture2D" uid="uid://b33415f2dprj5" path="res://Assets/HayBale.png" id="6_84nk6"]
 [ext_resource type="Texture2D" uid="uid://c5kq44k701nso" path="res://Assets/MilkTank.png" id="6_fqiin"]
@@ -109,6 +110,7 @@ scale = Vector2(2.20001, 2.20001)
 texture = ExtResource("4_nod5m")
 
 [node name="Label3" type="Label" parent="CanvasLayer2/CenterContainer/Node2D/Label2"]
+layout_mode = 0
 offset_left = 378.75
 offset_top = -36.25
 offset_right = 678.75
@@ -117,6 +119,36 @@ scale = Vector2(0.839669, 0.839669)
 theme_override_font_sizes/font_size = 30
 text = "Attack Skeletons By Moving Into Them"
 autowrap_mode = 2
+
+[node name="Label5" type="Label" parent="CanvasLayer2/CenterContainer/Node2D/Label2"]
+layout_mode = 0
+offset_left = 482.5
+offset_top = 90.0
+offset_right = 782.5
+offset_bottom = 290.0
+scale = Vector2(0.839669, 0.839669)
+theme_override_font_sizes/font_size = 30
+text = "Killing a skeleton rewards $50"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="CanvasLayer2/CenterContainer/Node2D/Label2"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 71.25
+offset_right = 415.0
+offset_bottom = 271.25
+scale = Vector2(0.839669, 0.839669)
+theme_override_font_sizes/font_size = 30
+text = "Spacebar:
+Pass a turn
+(without moving)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CashSymbol" type="Sprite2D" parent="CanvasLayer2/CenterContainer/Node2D/Label2"]
+position = Vector2(451.25, 128.75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_0ooe1")
 
 [node name="Label5" type="Label" parent="CanvasLayer2/CenterContainer/Node2D"]
 offset_left = -535.0
@@ -194,10 +226,10 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_otjnm")
 
 [node name="Label6" type="Label" parent="CanvasLayer2/CenterContainer/Node2D"]
-offset_left = -74.0
-offset_top = -54.0
-offset_right = 226.0
-offset_bottom = 168.0
+offset_left = -90.0
+offset_top = -22.0
+offset_right = 210.0
+offset_bottom = 200.0
 scale = Vector2(0.799998, 0.799998)
 theme_override_font_sizes/font_size = 30
 text = "Don't Die! Skeletons Will Attack If you're in the way"
@@ -290,17 +322,17 @@ text = "$500"
 label_settings = SubResource("LabelSettings_vfwi3")
 
 [node name="PatDead" parent="CanvasLayer2/CenterContainer/Node2D" instance=ExtResource("10_141mo")]
-position = Vector2(246, -6)
+position = Vector2(184, 18)
 scale = Vector2(0.126278, 0.126278)
 
 [node name="HeartMask" type="Control" parent="CanvasLayer2/CenterContainer/Node2D"]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 0
-offset_left = 236.0
-offset_top = -82.0
-offset_right = 361.0
-offset_bottom = -32.0
+offset_left = 174.0
+offset_top = -58.0
+offset_right = 299.0
+offset_bottom = -8.0
 
 [node name="Heart" type="Sprite2D" parent="CanvasLayer2/CenterContainer/Node2D/HeartMask"]
 position = Vector2(25, 25)

@@ -16,6 +16,8 @@ public partial class Level : Node2D {
     public static PackedScene victoryScene;
     public static Level SingletonInstance = null;
     [Export]
+    public int startingMoney;
+    [Export]
     public PackedScene NextLevel;
     [Export]
     public int Width {get; set;} = 15;
@@ -39,6 +41,7 @@ public partial class Level : Node2D {
     public override void _EnterTree() {
         base._EnterTree();
         HUD_Display = GetNode<HUD>("HUD");
+        StaticGameInfo.Money = startingMoney;
     }
     public override void _Ready() {
         base._Ready();
@@ -60,6 +63,9 @@ public partial class Level : Node2D {
             }
             else if (Input.IsActionJustPressed("ui_right")) {
                 StaticGameInfo.UpdateAllObjects(PlayerAction.MoveRight, Vector2I.Zero);
+            }
+            else if (Input.IsActionJustPressed("pass_turn")) {
+                StaticGameInfo.UpdateAllObjects(PlayerAction.PassTurn, Vector2I.Zero);
             }
             else if (Input.IsActionJustPressed("buy_bale")) {
                 isBuying = IsBuying.Bale;

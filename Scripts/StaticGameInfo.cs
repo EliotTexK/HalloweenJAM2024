@@ -13,7 +13,7 @@ public enum SkeletonPathNode {
 
 
 public enum PlayerAction {
-	MoveUp, MoveDown, MoveLeft, MoveRight,
+	MoveUp, MoveDown, MoveLeft, MoveRight, PassTurn,
 	Shoot, PlaceBale, PlaceHound
 }
 
@@ -155,6 +155,8 @@ public static partial class StaticGameInfo {
 					break;
 				case PlayerAction.MoveLeft:
 					player_dest = player.GridPos + Vector2I.Left;
+					break;
+				case PlayerAction.PassTurn:
 					break;
 				case PlayerAction.PlaceBale:
 					if (Money < 80) return; // not enough money don't take turn
