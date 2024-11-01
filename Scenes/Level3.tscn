@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://1tlmgrvld5to"]
 
 [ext_resource type="Script" path="res://Scripts/Level.cs" id="1_2o54k"]
-[ext_resource type="PackedScene" uid="uid://b1rqgfegf0esu" path="res://Scenes/GameOver.tscn" id="2_njhjy"]
+[ext_resource type="PackedScene" uid="uid://b1rqgfegf0esu" path="res://Scenes/GameEnd.tscn" id="2_fbkxv"]
 [ext_resource type="Texture2D" uid="uid://dv014btaxf5b5" path="res://Assets/GrassTex.png" id="2_raba5"]
 [ext_resource type="PackedScene" uid="uid://qtkal3jswacf" path="res://Scenes/HUD.tscn" id="3_bqetu"]
 [ext_resource type="PackedScene" uid="uid://yip47qb5iy84" path="res://Scenes/MilkTank.tscn" id="4_j6ogw"]
@@ -16,7 +16,7 @@
 y_sort_enabled = true
 script = ExtResource("1_2o54k")
 startingMoney = 160
-NextLevel = ExtResource("2_njhjy")
+NextLevel = ExtResource("2_fbkxv")
 
 [node name="GrassTex" type="Sprite2D" parent="."]
 z_index = -1
