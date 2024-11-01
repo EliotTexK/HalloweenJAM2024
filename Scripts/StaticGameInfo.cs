@@ -165,6 +165,12 @@ public static partial class StaticGameInfo {
 					Level.SingletonInstance.AddBale(new_bale_pos);
 					ComputeSkeletonPath();
 					break;
+				case PlayerAction.PlaceHound:
+					if (Money < 500) return; // not enough money don't take turn
+					if (QueryMap(player.GridPos + relativeTarget) != null) return; // something is in the way, don't take turn
+					Money -= 500;
+					Level.SingletonInstance.AddHound(player.GridPos + relativeTarget);
+					break;
 			}
 			if (IsInGridBounds(player_dest)) {
 				var atDest = QueryMap(player_dest);
@@ -180,6 +186,30 @@ public static partial class StaticGameInfo {
 				}
 				else {
 					return; // don't take turn, can't move there
+				}
+			}
+		}
+
+		foreach (WeakRef hound_ref in Hounds) {
+			var hound = (Hound)hound_ref.GetRef();
+			if (hound == null) {
+				Skeletons.Remove(hound_ref);
+				continue;
+			}
+			var pos = hound.GridPos;
+			var neighbors = new Dictionary<Vector2I, SkeletonPathNode> {
+				{new Vector2I(pos.X,pos.Y-1), SkeletonPathNode.S},
+				{new Vector2I(pos.X,pos.Y+1), SkeletonPathNode.N},
+				{new Vector2I(pos.X+1,pos.Y), SkeletonPathNode.W},
+				{new Vector2I(pos.X-1,pos.Y), SkeletonPathNode.E}
+			};
+			foreach (Vector2I nbr in neighbors.Keys) {
+				if (IsInGridBounds(nbr)) {
+					var atNbr = QueryMap(nbr);
+					if (atNbr is Skeleton) {
+						var skel = (Skeleton)atNbr;
+						skel.TakeDamage(3);
+					}
 				}
 			}
 		}
@@ -214,6 +244,10 @@ public static partial class StaticGameInfo {
 				else if (atDest is Patrickson) {
 					var player = (Patrickson)atDest;
 					player.TakeDamage(2);
+				}
+				else if (atDest is Hound) {
+					var hound = (Hound)atDest;
+					hound.TakeDamage(2);
 				}
 				else if (atDest is MilkTank) {
 					var milk = (MilkTank)atDest;

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://caon1wn616g56"]
+
+[ext_resource type="Texture2D" uid="uid://c362eighr3oml" path="res://Assets/HoundParts/Attack.png" id="1_mvp2b"]
+[ext_resource type="Script" path="res://Scripts/Hound.cs" id="1_ys36e"]
+[ext_resource type="Shader" path="res://Tint.gdshader" id="2_qfux2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ti4u8"]
+shader = ExtResource("2_qfux2")
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.0
+
+[node name="Hound" type="Node2D"]
+script = ExtResource("1_ys36e")
+Health = 10
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_ti4u8")
+
+[node name="Attack" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(-196, -360)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_mvp2b")
+offset = Vector2(750, 750)

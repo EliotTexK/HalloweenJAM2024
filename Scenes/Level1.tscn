@@ -197,8 +197,11 @@ position = Vector2(-750, 6750)
 [node name="Fence52" parent="BorderFence" instance=ExtResource("4_yf2aj")]
 position = Vector2(10500, 6750)
 
-[node name="Skeleton" parent="." instance=ExtResource("6_nt8li")]
-position = Vector2(9000, 6750)
+[node name="Skeleton2" parent="." instance=ExtResource("6_nt8li")]
+position = Vector2(8250, 6750)
+
+[node name="Skeleton5" parent="." instance=ExtResource("6_nt8li")]
+position = Vector2(9000, 6000)
 
 [node name="Skeleton4" parent="." instance=ExtResource("16_g6laa")]
 position = Vector2(9750, 6750)

@@ -7,4 +7,6 @@
 *.png~
 *.import
 *.exe
+*.pck
+data_HalloweenJAM2024_windows_x86_64/*
 MilkTankBase.svg

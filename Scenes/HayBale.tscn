@@ -20,6 +20,6 @@ material = SubResource("ShaderMaterial_jk043")
 
 [node name="HayBale" type="Sprite2D" parent="CanvasGroup"]
 position = Vector2(48, 36)
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.04, 1.04)
 texture = ExtResource("1_66dtq")
 offset = Vector2(750, 750)

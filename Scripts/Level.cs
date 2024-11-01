@@ -10,6 +10,7 @@ enum IsBuying {
 
 public partial class Level : Node2D {
     public static PackedScene hayBaleScene;
+    public static PackedScene houndScene;
     public static PackedScene healthDeathScene;
     public static PackedScene milkDeathScene;
     public static PackedScene victoryScene;
@@ -25,6 +26,7 @@ public partial class Level : Node2D {
     IsBuying isBuying = IsBuying.Nothing;
     public Level() {
         hayBaleScene = (PackedScene)ResourceLoader.Load("res://Scenes/HayBale.tscn");
+        houndScene = (PackedScene)ResourceLoader.Load("res://Scenes/Hound.tscn");
         healthDeathScene = (PackedScene)ResourceLoader.Load("res://Scenes/HealthDeath.tscn");
         milkDeathScene = (PackedScene)ResourceLoader.Load("res://Scenes/MilkDeath.tscn");
         victoryScene = (PackedScene)ResourceLoader.Load("res://Scenes/WinScreen.tscn");
@@ -85,6 +87,10 @@ public partial class Level : Node2D {
                     StaticGameInfo.UpdateAllObjects(PlayerAction.PlaceBale,relativeTarget.Value);
                     HUD_Display.UpdateMoney();
                 }
+                if (isBuying == IsBuying.Hound) {
+                    StaticGameInfo.UpdateAllObjects(PlayerAction.PlaceHound,relativeTarget.Value);
+                    HUD_Display.UpdateMoney();
+                }
                 isBuying = IsBuying.Nothing;
             }
         }
@@ -95,6 +101,13 @@ public partial class Level : Node2D {
         bale.GridPos = gridPos;
         bale.SetScreenSpaceFromGridSpace();
         AddChild(bale);
+    }
+
+    public void AddHound(Vector2I gridPos) {
+        Hound hound = (Hound)houndScene.Instantiate();
+        hound.GridPos = gridPos;
+        hound.SetScreenSpaceFromGridSpace();
+        AddChild(hound);
     }
 
     public void HealthDeath() {
